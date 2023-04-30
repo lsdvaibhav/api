@@ -6,14 +6,14 @@ from fastapi import FastAPI, File, UploadFile
 import shutil
 ```
 
-- 1. Upload a single file to aws-S3-bucket via fastapi
+1. Upload a single file to aws-S3-bucket via fastapi
 ```
 @app.post("/upload-image-file")
 async def image(image: UploadFile = File(...)):
     # save image to any folder or S3 bucket
     return {"filename": image.filename}
 ```
-- 2. Upload a single file to local server
+2. Upload a single file to local server
 ```
 @app.post("/upload-image-file-to-server")
 async def image(image: UploadFile = File(...)):
@@ -24,7 +24,7 @@ async def image(image: UploadFile = File(...)):
 
     return {"saved-filename": image.filename}
 ```
-- 3. Upload a multiple files 
+3. Upload a multiple files 
 ```
 # save multiple files from requests
 from typing import List
