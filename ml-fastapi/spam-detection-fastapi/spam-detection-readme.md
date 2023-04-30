@@ -63,3 +63,6 @@ async def detect_spam_query(message: str):
 If we navigate to the localhost URL, we can test this code with a sample message and response ``` {'label': "Label", 'spam_probability': 0.999} ```
 
 At this point, after writing less than 40 lines of code, we have a functioning REST API for spam detection.
+
+We can also use this documentation page to test each of the GET commands as demonstrated in the GIF below:
+[(https://miro.medium.com/v2/resize:fit:720/1*XNIR-K4rRdGfLvAIxHj3aw.gif)]
