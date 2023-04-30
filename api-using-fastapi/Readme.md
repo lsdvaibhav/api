@@ -27,30 +27,30 @@ Note
 
 The command uvicorn main:app refers to:
 
-main: the file main.py (the Python "module").
-app: the object created inside of main.py with the line app = FastAPI().
---reload: make the server restart after code changes. Only use for development.
+```main```: the file main.py (the Python "module").
+app: the object created inside of main.py with the line ```app = FastAPI()```.
+```--reload``` : make the server restart after code changes. Only use for development.
 In the output, there's a line with something like:
 
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 That line shows the URL where your app is being served, in your local machine.
 
 Check it¶
-Open your browser at http://127.0.0.1:8000.
+Open your browser at ```http://127.0.0.1:8000```.
 
 You will see the JSON response as:
 ```
 {"message": "Hello World"}
 ```
 Interactive API docs¶
-Now go to http://127.0.0.1:8000/docs.
+Now go to ```http://127.0.0.1:8000/docs```.
 
 You will see the automatic interactive API documentation (provided by Swagger UI):
 
 Swagger UI
 
 Alternative API docs¶
-And now, go to http://127.0.0.1:8000/redoc.
+And now, go to ```http://127.0.0.1:8000/redoc```.
 
 You will see the alternative automatic documentation (provided by ReDoc):
 
@@ -222,7 +222,7 @@ async def root():
 ```
 The @app.get("/") tells FastAPI that the function right below is in charge of handling requests that go to:
 
-the path /
+the path ```/```
 using a get operation
 @decorator Info
 
@@ -261,7 +261,9 @@ Step 4: define the path operation function¶
 This is our "path operation function":
 
 path: is /.
+
 operation: is get.
+
 function: is the function below the "decorator" (below @app.get("/")).
 ```
 from fastapi import FastAPI
