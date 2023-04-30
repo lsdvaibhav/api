@@ -65,4 +65,4 @@ If we navigate to the localhost URL, we can test this code with a sample message
 At this point, after writing less than 40 lines of code, we have a functioning REST API for spam detection.
 
 We can also use this documentation page to test each of the GET commands as demonstrated in the GIF below:
-[(https://miro.medium.com/v2/resize:fit:720/1*XNIR-K4rRdGfLvAIxHj3aw.gif)]
+[demo](https://miro.medium.com/v2/resize:fit:720/1*XNIR-K4rRdGfLvAIxHj3aw.gif)
