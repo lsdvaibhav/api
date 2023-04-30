@@ -1,5 +1,6 @@
 Using FastAPI we can save multiple use cases : 
 
+-------------------- Upload file start -----------------------------
 ```
 from fastapi import FastAPI, File, UploadFile
 import shutil
@@ -35,3 +36,12 @@ async def image(images: List[UploadFile] = File(...)):
 
     return {"saved-filenames": [i.filename for i in images]}
 ```
+Let’s recap what we have learned today.
+
+We started off with a simple problem statement explaining the lack of wrapper function in FastAPI to save uploaded files.
+
+Next, we explored in-depth on the fundamental concept behind UploadFile and how to use it inside FastAPI server.
+
+We have also implemented a simple file saving functionality using the built-in shutil.copyfileobj method. Besides, we have also tried extending our server to handle multiple files upload.
+
+-------------------- Upload file ends -----------------------------
