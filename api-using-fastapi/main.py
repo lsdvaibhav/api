@@ -10,3 +10,4 @@ async def root():
 
 	# return a sample json as a response
     return {"message": "Hello World"}
+
