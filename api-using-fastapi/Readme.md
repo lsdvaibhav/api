@@ -185,16 +185,16 @@ Operation¶
 
 One of:
 
-POST
-GET
-PUT
-DELETE
+```POST```
+```GET```
+```PUT```
+```DELETE```
 ...and the more exotic ones:
 
 OPTIONS
-HEAD
-PATCH
-TRACE
+```HEAD```
+```PATCH```
+```TRACE```
 In the HTTP protocol, you can communicate to each path using one (or more) of these "methods".
 
 When building APIs, you normally use these specific HTTP methods to perform a specific action.
@@ -210,6 +210,7 @@ So, in OpenAPI, each of the HTTP methods is called an "operation".
 We are going to call them "operations" too.
 
 Define a path operation decorator¶
+```
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -218,6 +219,7 @@ app = FastAPI()
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
+```
 The @app.get("/") tells FastAPI that the function right below is in charge of handling requests that go to:
 
 the path /
@@ -236,15 +238,15 @@ It is the "path operation decorator".
 
 You can also use the other operations:
 
-@app.post()
-@app.put()
-@app.delete()
+```@app.post()```
+```@app.put()```
+```@app.delete()```
 And the more exotic ones:
 
-@app.options()
-@app.head()
-@app.patch()
-@app.trace()
+```@app.options()```
+```@app.head()```
+```@app.patch()```
+```@app.trace()```
 Tip
 
 You are free to use each operation (HTTP method) as you wish.
@@ -261,6 +263,7 @@ This is our "path operation function":
 path: is /.
 operation: is get.
 function: is the function below the "decorator" (below @app.get("/")).
+```
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -269,6 +272,7 @@ app = FastAPI()
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
+```
 This is a Python function.
 
 It will be called by FastAPI whenever it receives a request to the URL "/" using a GET operation.
@@ -276,7 +280,7 @@ It will be called by FastAPI whenever it receives a request to the URL "/" using
 In this case, it is an async function.
 
 You could also define it as a normal function instead of async def:
-
+```
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -285,28 +289,5 @@ app = FastAPI()
 @app.get("/")
 def root():
     return {"message": "Hello World"}
+```
 Note
-
-If you don't know the difference, check the Async: "In a hurry?".
-
-Step 5: return the content¶
-from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-You can return a dict, list, singular values as str, int, etc.
-
-You can also return Pydantic models (you'll see more about that later).
-
-There are many other objects and models that will be automatically converted to JSON (including ORMs, etc). Try using your favorite ones, it's highly probable that they are already supported.
-
-Recap¶
-Import FastAPI.
-Create an app instance.
-Write a path operation decorator (like @app.get("/")).
-Write a path operation function (like def root(): ... above).
-Run the development server (like uvicorn main:app --reload).
