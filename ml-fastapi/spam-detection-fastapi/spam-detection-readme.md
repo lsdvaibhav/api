@@ -65,4 +65,4 @@ If we navigate to the localhost URL, we can test this code with a sample message
 At this point, after writing less than 40 lines of code, we have a functioning REST API for spam detection.
 
 We can also use this documentation page to test each of the GET commands as demonstrated in the GIF below:
-![demo]('1_COUA-0NlTzOLQAdN-uCluA.gif')
+![demo]('\ml-fastapi\spam-detection-fastapi\1_COUA-0NlTzOLQAdN-uCluA.gif')
