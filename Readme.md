@@ -3,13 +3,6 @@ An API, which stands for application programming interface, is a set of protocol
 
 Here, we'll give a high-level overview of how APIs work before reviewing the different types of APIs and how they are used. We'll also discuss some common use cases for APIs—and offer a few real-world API examples that can help you get started.
 
-What is an API?
-
-How do APIs work?
-Different types of APIs
-Common API use cases
-Real-world examples of APIs
-Questions about APIs
 How do APIs work?
 APIs work by sharing data between applications, systems, and devices. In order to better understand this process, it can be useful to think of APIs like restaurants. In this metaphor, the customer is like the user, who tells the waiter what she wants. The waiter is like an API, receiving the customer's order and translating it into easy-to-follow instructions for the kitchen—sometimes using specific codes or abbreviations that the kitchen staff will recognize. The kitchen staff is like the API server because it creates the order according to the customer's specifications and gives it to the waiter, who then delivers it to the customer.
 
