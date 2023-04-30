@@ -64,5 +64,41 @@ If we navigate to the localhost URL, we can test this code with a sample message
 
 At this point, after writing less than 40 lines of code, we have a functioning REST API for spam detection.
 
-We can also use this documentation page to test each of the GET commands as demonstrated in the GIF below:
-![demo]('1_COUA-0NlTzOLQAdN-uCluA.gif')
+## Deploying the App on Docker
+
+Now that we have a working API, we can easily deploy it anywhere as a Docker container. If you aren’t familiar with Docker, it is basically a tool that lets you package and run applications in isolated environments called containers.
+
+To run the API as a Docker container, you need to first create a directory called app with all of the code files and a Dockerfile in the parent directory with instructions for running the FastAPI app. To do this, open a text file named “Dockerfile” and add the following lines to it.
+```
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
+
+COPY ./app /app
+WORKDIR /app
+RUN pip install sklearn joblib
+```
+
+Your directory structure should look something like this along with a few extra files from training the spam detection model:
+
+```
+.
+├── app
+│ └── main.py
+└── Dockerfile
+```
+
+The Dockerfile above performs the following tasks:
+
+Pulls the FastAPI docker image.
+Copies the contents of the app directory to the image.
+Makes the app directory the working directory.
+Installs necessary dependencies such as Scikit-learn and Joblib.
+After creating this file, save it and build the Docker image with the following command.
+
+docker build -t myimage .
+Once the image has been built, you can run the Docker container with the following command.
+
+```docker run -d --name mycontainer -p 80:80 myimage```
+
+Now, you should have a Docker container running on your local machine. If you open your Docker dashboard, you should be able to see the container running.
+
+Save it all. Bye.
