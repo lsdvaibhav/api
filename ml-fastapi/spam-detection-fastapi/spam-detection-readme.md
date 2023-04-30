@@ -64,6 +64,7 @@ If we navigate to the localhost URL, we can test this code with a sample message
 
 At this point, after writing less than 40 lines of code, we have a functioning REST API for spam detection.
 
+<<<<<<< HEAD
 ## Deploying the App on Docker
 
 Now that we have a working API, we can easily deploy it anywhere as a Docker container. If you aren’t familiar with Docker, it is basically a tool that lets you package and run applications in isolated environments called containers.
